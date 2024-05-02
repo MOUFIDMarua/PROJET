@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Function to check if the user's guess is correct
+check_guess() {
+  if [ $1 -eq $(ls | wc -l) ]; then
+    echo "Congratulations! You guessed the correct number of files."
+    exit 0
+  elif [ $1 -lt $(ls | wc -l) ]; then
+    echo "Your guess is too low. Try again."
+  else
+    echo "Your guess is too high. Try again."
+  fi
+}
+
+# Ask the user for the number of files in the current directory
+echo "How many files are in the current directory?"
+read guess
+
+# Loop until the user guesses correctly
+while true; do
+  check_guess $guess
+  read guess
+done#!/bin/bash
+
+# Function to check if the user's guess is correct
+check_guess() {
+  if [ $1 -eq $(ls | wc -l) ]; then
+    echo "Congratulations! You guessed the correct number of files."
+    exit 0
+  elif [ $1 -lt $(ls | wc -l) ]; then
+    echo "Your guess is too low. Try again."
+  else
+    echo "Your guess is too high. Try again."
+  fi
+}
+
+# Ask the user for the number of files in the current directory
+echo "How many files are in the current directory?"
+read guess
+
+# Loop until the user guesses correctly
+while true; do
+  check_guess $guess
+  read guess
+done
